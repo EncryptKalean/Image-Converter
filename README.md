@@ -1,6 +1,6 @@
 # 🖼️ Image Converter
 
-Um conversor de imagens simples e eficiente, desenvolvido para transformar arquivos JPEG, PNG e WEBP com opções de escala e resolução personalizada.
+Um conversor de imagens simples e eficiente, desenvolvido para converter qualquer formato de imagem pra JPEG, PNG e WEBP com opções de escala e resolução personalizada.
 Ideal para quem precisa otimizar imagens, reduzir tamanho de arquivos e manter a qualidade.
 
 ---
@@ -13,7 +13,7 @@ https://encryptkalean.github.io/Image-Converter/
 
 ## ✨ Funcionalidades
 
-- 📤 Upload de qualquer formato de imagem.
+- 📤 Upload de qualquer formato imagens.
 - 🔄 Conversão entre formatos: JPEG, PNG, WEBP.
 - 📏 Ajuste de escala e resolução.
 - ⚡ Compressão otimizada.
@@ -37,5 +37,4 @@ https://encryptkalean.github.io/Image-Converter/
 ## 🛠️ Tecnologias usadas
 
 - 🎨⚡ HTML, CSS & JavaScript.
-
 - 🖼️ Canvas API.

@@ -95,10 +95,10 @@ function convertendoParaWebp(arquivo, escala, qualidade, nome_do_arquivo, tamanh
                 let tamanhoOriginalEmKB = (tamanho_original / 1024).toFixed(2);
                 let tamanhoEmKB = (blobFinal.size / 1024).toFixed(2);
 
-                if (tamanhoOriginalEmKB > 1024) tamanhoOriginalEmKB = (tamanhoOriginalEmKB / 1024).toFixed(2) + 'MB';
+                if (tamanhoOriginalEmKB >= 1024) tamanhoOriginalEmKB = (tamanhoOriginalEmKB / 1024).toFixed(2) + 'MB';
                 else { tamanhoOriginalEmKB += 'KB' };
 
-                if (tamanhoEmKB > 1024) tamanhoEmKB = (tamanhoEmKB / 1024).toFixed(2) + 'MB';
+                if (tamanhoEmKB >= 1024) tamanhoEmKB = (tamanhoEmKB / 1024).toFixed(2) + 'MB';
                 else { tamanhoEmKB += 'KB' };
 
                 const urlFinal = URL.createObjectURL(blobFinal);
