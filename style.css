@@ -1,0 +1,298 @@
+:root {
+  --cor_texto: white;
+  --background: linear-gradient(110deg, #3426d1, #6a1eb9);
+  --box_shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background-color: #2b2b2c;
+  scroll-behavior: smooth;
+  display: flex;
+  padding: 0 3%;
+}
+
+/* Base */
+
+body > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 3%;
+}
+
+#configuracao {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+svg {
+  width: 100%;
+  aspect-ratio: 1;
+  color: inherit;
+}
+
+/* --------------- Campo */
+
+#campo_arquivo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 2px solid rgba(128, 128, 128, 0.3);
+  border-radius: 15px;
+  color: var(--cor_texto);
+  align-content: center;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--box_shadow);
+}
+
+#campo_arquivo svg {
+  max-width: 100px;
+}
+
+/* --------------- Span(s) */
+
+span,
+#baixar_imagem {
+  width: 100%;
+  display: flex;
+  color: var(--cor_texto);
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+span svg {
+  max-width: 30px;
+}
+
+span input {
+  width: 100%;
+  cursor: pointer;
+  box-shadow: var(--box_shadow);
+}
+
+/* ----------------- Sliders */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Thumb para WebKit */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--cor_texto);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px #000;
+}
+
+/* Thumb para Firefox */
+input[type="range"]::-moz-range-thumb {
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--cor_texto);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px #000;
+}
+
+/* ------------------------ Tipos de conversão */
+
+label {
+  color: var(--cor_texto);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#tipo_de_saida {
+  margin-bottom: -20px;
+}
+
+#tipos_de_conversao {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  height: 50px;
+}
+
+#tipos_de_conversao > button {
+  border-radius: 10px;
+  width: calc(75% / 3);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--cor_texto);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  box-shadow: var(--box_shadow);
+  transition: 0.5s;
+}
+
+/*  ------------------ button */
+
+#converter_btn,
+.selecionado {
+  background: var(--background);
+  color: var(--cor_texto);
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: var(--box_shadow);
+}
+
+#converter_btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+button svg {
+  max-width: 40px;
+}
+
+button:hover {
+  scale: 1.1;
+}
+
+/* --------------- Download | Imagem */
+
+#container_preview {
+  display: none;
+  gap: 10px;
+  width: 0px;
+  overflow-x: hidden;
+  padding: 0;
+  transition: 2s;
+}
+
+#baixar_imagem svg {
+  max-width: 50px;
+}
+
+#baixar_imagem {
+  width: auto;
+  text-transform: capitalize;
+  font-weight: bold;
+  background: var(--background);
+  border-radius: 10px;
+  box-shadow: var(--box_shadow);
+  transition: 0.5s;
+  padding: 10px 15px;
+}
+
+#baixar_imagem:hover {
+  scale: 1.1;
+}
+
+#tamanho_texto,
+#tipo_texto {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--cor_texto);
+  text-transform: uppercase;
+}
+
+#tamanho_texto svg,
+#tipo_texto svg {
+  max-width: 40px;
+  rotate: 180deg;
+}
+
+/* ------------------ IMG */
+
+#image_continer {
+  position: relative;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: var(--box_shadow);
+  overflow: hidden;
+}
+
+#image_continer img {
+  height: 100%;
+  border: none;
+  object-fit: cover;
+  object-position: right;
+}
+
+#preview {
+  top: 0;
+  right: 0;
+  position: absolute;
+  box-shadow: var(--box_shadow);
+  z-index: 2;
+}
+
+#image_continer {
+  height: 0;
+}
+
+/* ---------------- Label Comparação */
+
+#comparacao_label,
+#comparacao {
+  margin: 10px 0 0;
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+/* Reponsivo Mobile */
+
+@media screen and (max-width: 1000px) {
+  body {
+    display: block;
+    padding: 3%;
+  }
+
+  #container_preview {
+    transition: 0s;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  #image_continer {
+    height: auto;
+    width: 100%;
+  }
+
+  #image_continer img {
+    height: auto;
+    width: 100%;
+  }
+
+  #preview {
+    height: 100% !important;
+  }
+}
