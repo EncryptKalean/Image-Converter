@@ -13,7 +13,7 @@ https://encryptkalean.github.io/Image-Converter/
 
 ## ✨ Funcionalidades
 
-- 📤 Upload de qualquer formato imagens.
+- 📤 Upload de qualquer formato de imagem.
 - 🔄 Conversão entre formatos: JPEG, PNG, WEBP.
 - 📏 Ajuste de escala e resolução.
 - ⚡ Compressão otimizada.
@@ -37,4 +37,5 @@ https://encryptkalean.github.io/Image-Converter/
 ## 🛠️ Tecnologias usadas
 
 - 🎨⚡ HTML, CSS & JavaScript.
+
 - 🖼️ Canvas API.
