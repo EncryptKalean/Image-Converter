@@ -7,7 +7,7 @@ Ideal para quem precisa otimizar imagens, reduzir tamanho de arquivos e manter a
 
 ## 🚀 Start
 
-https://encryptkalean.github.io/Image-Converter/
+https://encryptkalean.github.io/Image-Converter/index.html
 
 ---
 
@@ -37,4 +37,5 @@ https://encryptkalean.github.io/Image-Converter/
 ## 🛠️ Tecnologias usadas
 
 - 🎨⚡ HTML, CSS & JavaScript.
+
 - 🖼️ Canvas API.
