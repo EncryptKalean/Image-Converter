@@ -72,9 +72,17 @@
       Image Converter - Converta Imagens Online para WEBP, JPEG e PNG
     </title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="preload"
+      href="style.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="style.css" /></noscript>
   </head>
-
   <body>
     <!-- Section Principal -->
     <!-- É aqui onde o usuario configura a conversão -->
@@ -145,8 +153,8 @@
         oninput="atualizandoComparacao(this.value)"
       />
       <div id="image_continer">
-        <img id="original" />
-        <img id="preview" />
+        <img decoding="async" loading="lazy" id="original" />
+        <img decoding="async" loading="lazy" id="preview" />
       </div>
     </section>
 
@@ -182,6 +190,6 @@
         />
       </symbol>
     </svg>
-    <script src="js.js"></script>
+    <script src="js.js" defer></script>
   </body>
 </html>
