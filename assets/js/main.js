@@ -24,18 +24,55 @@ const elementoPreview = {
     pxFinal: document.querySelector('#comparacao-px .depois'),
 };
 
+const uploadArea = document.getElementById('campo-arquivo');
+// Impede comportamento padrão
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    uploadArea.addEventListener(eventName, e => {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+});
+
+// Destaque visual ao arrastar
+['dragenter', 'dragover'].forEach(eventName => {
+    uploadArea.addEventListener(eventName, () => {
+        uploadArea.classList.add('dragging');
+    });
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+    uploadArea.addEventListener(eventName, () => {
+        uploadArea.classList.remove('dragging');
+    });
+});
+
+// Recebe o arquivo
+uploadArea.addEventListener('drop', (e) => {
+    const arquivo = e.dataTransfer.files[0];
+
+    if (!arquivo || !arquivo.type.startsWith('image/')) {
+        alert('Selecione uma imagem válida');
+        return;
+    }
+
+    coletandoImagem(arquivo);
+});
+
+elementoHome.inputImagem.addEventListener('change', (event) => { coletandoImagem(event.target.files[0]); });
+
 // Mostra um preview do arquivo ao escolher uma imagem
 let imagemSrc;
 let urlOriginalAtual;
 
-elementoHome.inputImagem.addEventListener('change', (event) => {
-    imagemSrc = event.target.files[0];
+function coletandoImagem(img) {
+    imagemSrc = img;
 
     if (urlOriginalAtual) URL.revokeObjectURL(urlOriginalAtual);
 
     elementoHome.previewUpload.src = urlOriginalAtual = URL.createObjectURL(imagemSrc);
+
     elementoHome.nomeImagem.textContent = imagemSrc.name;
-});
+}
 
 // Atualiza o background dos sliders
 elementoHome.sliderArray.forEach(slider => {
@@ -46,7 +83,7 @@ elementoHome.sliderArray.forEach(slider => {
 
         timer = requestAnimationFrame(() => {
             slider.style.setProperty('--porcentagem', `${slider.value}%`);
-            
+
             if (slider.id === elementoPreview.comparacaoSlider.id) elementoPreview.imagemPreview.style.setProperty('--porcentagemDivisao', `${100 - slider.value}%`);
 
             timer = null;
