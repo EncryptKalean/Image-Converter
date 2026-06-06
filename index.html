@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <!-- Charset deve vir antes de tudo -->
@@ -10,186 +11,275 @@
     <meta name="author" content="Kauan Leandro" />
     <meta
       name="description"
-      content="Converta imagens online de forma rápida e gratuita. Transforme arquivos para WEBP, JPEG e PNG, ajuste resolução, escala e faça download com qualidade garantida."
+      content="Converta, comprima e redimensione imagens PNG, JPEG e WebP diretamente no navegador. Nenhum arquivo é enviado para servidores, todo o processamento acontece localmente no seu dispositivo."
+    />
+    <meta
+      name="keywords"
+      content="conversor de imagem, compressor de imagem, webp, jpeg, png, redimensionar imagem, otimizar imagem"
     />
     <meta name="robots" content="index, follow" />
     <link rel="me" href="https://github.com/EncryptKalean" />
 
     <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <link
-      rel="shortcut icon"
-      href="https://encryptkalean.github.io/Image-Converter/Imagens/icone.ico"
-      type="image/x-icon"
+      rel="icon"
+      href="assets/img/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
     />
 
-    <!-- Canonical deve vir logo após SEO -->
+    <!-- Canonical -->
     <link
       rel="canonical"
-      href="https://encryptkalean.github.io/Image-Converter/"
+      href="https://encryptkalean.github.io/image-converter/"
     />
 
-    <!-- Open Graph (Facebook, LinkedIn etc.) -->
+    <!-- Open Graph -->
     <meta property="og:site_name" content="Image Converter" />
-    <meta
-      property="og:title"
-      content="Image Converter - Converta Imagens Online"
-    />
+    <meta property="og:title" content="Image Converter | PNG, JPEG e WebP" />
     <meta
       property="og:description"
-      content="Ferramenta gratuita para converter imagens em WEBP, JPEG e PNG. Ajuste escala, resolução e baixe sua imagem otimizada em segundos."
+      content="Converta, comprima e redimensione imagens diretamente no navegador. Nenhum arquivo é enviado para servidores."
     />
     <meta
       property="og:image"
-      content="https://encryptkalean.github.io/Image-Converter/Imagens/preview.png"
+      content="https://encryptkalean.github.io/image-converter/assets/img/preview.jpg"
     />
     <meta
       property="og:url"
-      content="https://encryptkalean.github.io/Image-Converter/"
+      content="https://encryptkalean.github.io/image-converter/"
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Image Converter - Converta Imagens Online"
-    />
+    <meta name="twitter:title" content="Image Converter | PNG, JPEG e WebP" />
     <meta
       name="twitter:description"
-      content="Converta imagens facilmente para WEBP, JPEG e PNG. Ajuste resolução, escala e baixe sua imagem otimizada em segundos."
+      content="Converta, comprima e redimensione imagens diretamente no navegador. Nenhum arquivo é enviado para servidores."
     />
     <meta
       name="twitter:image"
-      content="https://encryptkalean.github.io/Image-Converter/Imagens/preview.png"
+      content="https://encryptkalean.github.io/image-converter/assets/img/preview.jpg"
     />
     <meta
       name="twitter:url"
-      content="https://encryptkalean.github.io/Image-Converter/"
+      content="https://encryptkalean.github.io/image-converter/"
     />
 
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#3426d1" />
+
+    <!-- Performance -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <title>
-      Image Converter - Converta Imagens Online para WEBP, JPEG e PNG
+      Image Converter | Converter, Comprimir e Redimensionar Imagens PNG, JPEG,
+      AVIF e WebP
     </title>
 
     <link
       rel="preload"
-      href="style.css"
+      href="assets/css/base.css"
       as="style"
       onload="
         this.onload = null;
         this.rel = 'stylesheet';
       "
     />
-    <noscript><link rel="stylesheet" href="style.css" /></noscript>
+    <noscript><link rel="stylesheet" href="assets/css/base.css" /></noscript>
+
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/preview.css" />
+
+    <!-- Dados estruturados -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Converter",
+        "url": "https://encryptkalean.github.io/image-converter/",
+        "image": "https://encryptkalean.github.io/image-converter/assets/img/preview.jpg",
+        "description": "Ferramenta online para converter, comprimir e redimensionar imagens PNG, JPEG e WebP. Nenhum arquivo é enviado para servidores; todo o processamento acontece localmente no navegador.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any"
+      }
+    </script>
   </head>
   <body>
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      fill="currentColor"
+      style="display: none"
+    >
+      <symbol id="icon-nuvem-upload" viewBox="0 0 640 640">
+        <path
+          d="M176 544C96.5 544 32 479.5 32 400C32 336.6 73 282.8 129.9 263.5C128.6 255.8 128 248 128 240C128 160.5 192.5 96 272 96C327.4 96 375.5 127.3 399.6 173.1C413.8 164.8 430.4 160 448 160C501 160 544 203 544 256C544 271.7 540.2 286.6 533.5 299.7C577.5 320 608 364.4 608 416C608 486.7 550.7 544 480 544H176zM337 255C327.6 245.6 312.4 245.6 303.1 255L231.1 327C221.7 336.4 221.7 351.6 231.1 360.9C240.5 370.2 255.7 370.3 265 360.9L296 329.9V432C296 445.3 306.7 456 320 456C333.3 456 344 445.3 344 432V329.9L375 360.9C384.4 370.3 399.6 370.3 408.9 360.9C418.2 351.5 418.3 336.3 408.9 327L336.9 255z"
+        />
+      </symbol>
+      <symbol id="icon-lupa" viewBox="0 0 640 640">
+        <path
+          d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"
+        />
+      </symbol>
+      <symbol id="icon-image" viewBox="0 0 640 640">
+        <path
+          d="M160 96C124.7 96 96 124.7 96 160V480C96 515.3 124.7 544 160 544H480C515.3 544 544 515.3 544 480V160C544 124.7 515.3 96 480 96H160zM224 176C250.5 176 272 197.5 272 224C272 250.5 250.5 272 224 272C197.5 272 176 250.5 176 224C176 197.5 197.5 176 224 176zM368 288C376.4 288 384.1 292.4 388.5 299.5L476.5 443.5C481 450.9 481.2 460.2 477 467.8C472.8 475.4 464.7 480 456 480H184C175.1 480 166.8 475 162.7 467.1C158.6 459.2 159.2 449.6 164.3 442.3L220.3 362.3C224.8 355.9 232.1 352.1 240 352.1C247.9 352.1 255.2 355.9 259.7 362.3L286.1 400.1L347.5 299.6C351.9 292.5 359.6 288.1 368 288.1z"
+        />
+      </symbol>
+      <symbol id="icon-play" viewBox="0 0 640 640">
+        <path
+          d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136V504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
+        />
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 640 640">
+        <path
+          d="M352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96V306.7L246.6 265.3C234.1 252.8 213.8 252.8 201.3 265.3C188.8 277.8 188.8 298.1 201.3 310.6L297.3 406.6C309.8 419.1 330.1 419.1 342.6 406.6L438.6 310.6C451.1 298.1 451.1 277.8 438.6 265.3C426.1 252.8 405.8 252.8 393.3 265.3L352 306.7V96zM160 384C124.7 384 96 412.7 96 448V480C96 515.3 124.7 544 160 544H480C515.3 544 544 515.3 544 480V448C544 412.7 515.3 384 480 384H433.1L376.5 440.6C345.3 471.8 294.6 471.8 263.4 440.6L206.9 384H160zM464 440C477.3 440 488 450.7 488 464C488 477.3 477.3 488 464 488C450.7 488 440 477.3 440 464C440 450.7 450.7 440 464 440z"
+        />
+      </symbol>
+      <symbol id="icon-seta" viewBox="0 0 640 640">
+        <path
+          transform="translate(608 0)scale(-1 1)"
+          d="M41.4 297.4C28.9 309.9 28.9 330.2 41.4 342.7L169.4 470.7C181.9 483.2 202.2 483.2 214.7 470.7C227.2 458.2 227.2 437.9 214.7 425.4L141.3 352H576C593.7 352 608 337.7 608 320C608 302.3 593.7 288 576 288H141.3L214.7 214.6C227.2 202.1 227.2 181.8 214.7 169.3C202.2 156.8 181.9 156.8 169.4 169.3L41.4 297.3z"
+        />
+      </symbol>
+    </svg>
+
+    <noscript>
+      Este site precisa de JavaScript habilitado para funcionar corretamente.
+    </noscript>
+
     <!-- Section Principal -->
     <!-- É aqui onde o usuario configura a conversão -->
-    <section id="configuracao">
-      <!-- Onde vai a imagem -->
-      <label for="media" id="campo_arquivo">
-        <svg><use href="#icon_upload" /></svg>
-        <p>Click para procurar a imagem</p>
+    <section id="home" class="center">
+      <!-- Onde procura a imagem -->
+      <label for="input-imagem" id="campo-arquivo">
+        <svg><use href="#icon-nuvem-upload" /></svg>
+        <p id="nome-arquivo">Click para procurar a imagem</p>
+
+        <img
+          id="preview-upload"
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
+          loading="lazy"
+          decoding="async"
+        />
       </label>
-      <input type="file" accept="image/*" id="media" style="display: none" />
+      <input
+        type="file"
+        accept="image/*"
+        id="input-imagem"
+        style="display: none"
+      />
 
-      <!-- Parte da Escala -->
-      <span id="tamanho_span">
-        <svg><use href="#icon_zoom" /></svg>Escala
-        <input
-          id="tamanho"
-          type="range"
-          max="100"
-          min="10"
-          value="100"
-          oninput="atualizandoTamanho(this.value)"
-        />
-        <p>100%</p>
-      </span>
+      <!-- inputs-container -->
+      <div id="container">
+        <div id="escala-container">
+          <svg><use href="#icon-lupa" /></svg>
+          <span>Escala</span>
+          <input
+            id="escala-input"
+            type="range"
+            max="100"
+            min="1"
+            value="100"
+            oninput="out.value = this.value + '%'"
+          />
+          <output class="porcentagem-texto" id="out">100%</output>
+        </div>
+        <!-- Escala container FIM -->
 
-      <!-- Parte da Resolução -->
-      <span id="resolucao_span">
-        <svg><use href="#icon_image" /></svg>Resolução
-        <input
-          id="resolucao"
-          type="range"
-          max="100"
-          min="10"
-          value="100"
-          oninput="atualizandoResolucao(this.value)"
-        />
-        <p>100%</p>
-      </span>
-
-      <!-- Botões para escolher o formato de saida -->
-      <label id="tipo_de_saida" for="tipos_de_conversao">Saida</label>
-      <div id="tipos_de_conversao">
-        <button tipo="webp" class="selecionado">webp</button>
-        <button tipo="jpeg">jpeg</button>
-        <button tipo="png">png</button>
+        <div id="resolucao-container">
+          <svg><use href="#icon-image" /></svg>
+          <span>resolução</span>
+          <input
+            id="resolucao-input"
+            type="range"
+            max="100"
+            min="1"
+            value="100"
+            oninput="outR.value = this.value + '%'"
+          />
+          <output class="porcentagem-texto" id="outR">100%</output>
+        </div>
+        <!-- Resolucao container FIM -->
       </div>
 
-      <!-- Botão para iniciar -->
-      <button id="converter_btn" onclick="coletandoValores()">
-        <svg><use href="#icon_play" /></svg>
-        Converter
+      <!-- Botões para escolher o formato de saida -->
+      <div id="saida-container">
+        <h2>Saida</h2>
+
+        <div id="btns-container">
+          <label id="webp-label" for="webp">webp</label>
+          <input type="radio" name="tipo-saida" id="webp" checked />
+
+          <label id="jpeg-label" for="jpeg">jpeg</label>
+          <input type="radio" name="tipo-saida" id="jpeg" />
+
+          <label id="png-label" for="png">png</label>
+          <input type="radio" name="tipo-saida" id="png" />
+
+          <label id="avif-label" for="avif">avif</label>
+          <input type="radio" name="tipo-saida" id="avif" />
+        </div>
+      </div>
+
+      <button id="converter-btn">
+        <svg><use href="#icon-play" /></svg> Converter
       </button>
     </section>
 
     <!-- Section Preview -->
     <!-- É aqui que a imagem aparecerá -->
-    <section id="container_preview">
-      <a id="baixar_imagem"></a>
-      <p id="tamanho_texto"></p>
-      <label id="comparacao_label" for="comparacao">Comparação</label>
-      <p id="tipo_texto"></p>
-      <input
-        id="comparacao"
-        type="range"
-        max="100"
-        min="0"
-        value="50"
-        oninput="atualizandoComparacao(this.value)"
-      />
-      <div id="image_continer">
-        <img decoding="async" loading="lazy" id="original" />
-        <img decoding="async" loading="lazy" id="preview" />
+    <section id="preview" class="">
+      <a href="" id="download-btn">
+        <svg focusable="false" aria-hidden="true">
+          <use href="#icon-download" />
+        </svg>
+      </a>
+
+      <div id="comparacao-peso">
+        <span class="antes">0000kb</span>
+        <svg focusable="false" aria-hidden="true">
+          <use href="#icon-seta" />
+        </svg>
+        <span class="depois">----</span>
+      </div>
+
+      <div id="comparacao-tipo-arquivo">
+        <span class="antes">---</span>
+        <svg focusable="false" aria-hidden="true">
+          <use href="#icon-seta" />
+        </svg>
+        <span class="depois">----</span>
+      </div>
+
+      <div id="comparacao-px">
+        <span class="antes">0000px</span>
+        <svg focusable="false" aria-hidden="true">
+          <use href="#icon-seta" />
+        </svg>
+        <span class="depois">----</span>
+      </div>
+
+      <input type="range" id="comparacao-input" value="50" min="0" max="100" />
+
+      <div id="imagem-container">
+        <img id="img-original" src="" loading="lazy" decoding="async" />
+
+        <img
+          id="img-preview"
+          src="CARREGANDO..."
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </section>
 
-    <svg style="display: none">
-      <symbol id="icon_upload" fill="currentColor" viewBox="0 0 640 640">
-        <path
-          d="M176 544C96.5 544 32 479.5 32 400C32 336.6 73 282.8 129.9 263.5C128.6 255.8 128 248 128 240C128 160.5 192.5 96 272 96C327.4 96 375.5 127.3 399.6 173.1C413.8 164.8 430.4 160 448 160C501 160 544 203 544 256C544 271.7 540.2 286.6 533.5 299.7C577.5 320 608 364.4 608 416C608 486.7 550.7 544 480 544L176 544zM337 255C327.6 245.6 312.4 245.6 303.1 255L231.1 327C221.7 336.4 221.7 351.6 231.1 360.9C240.5 370.2 255.7 370.3 265 360.9L296 329.9L296 432C296 445.3 306.7 456 320 456C333.3 456 344 445.3 344 432L344 329.9L375 360.9C384.4 370.3 399.6 370.3 408.9 360.9C418.2 351.5 418.3 336.3 408.9 327L336.9 255z"
-        />
-      </symbol>
-      <symbol id="icon_zoom" fill="currentColor" viewBox="0 0 640 640">
-        <path
-          d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"
-        />
-      </symbol>
-      <symbol id="icon_image" fill="currentColor" viewBox="0 0 640 640">
-        <path
-          d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM224 176C250.5 176 272 197.5 272 224C272 250.5 250.5 272 224 272C197.5 272 176 250.5 176 224C176 197.5 197.5 176 224 176zM368 288C376.4 288 384.1 292.4 388.5 299.5L476.5 443.5C481 450.9 481.2 460.2 477 467.8C472.8 475.4 464.7 480 456 480L184 480C175.1 480 166.8 475 162.7 467.1C158.6 459.2 159.2 449.6 164.3 442.3L220.3 362.3C224.8 355.9 232.1 352.1 240 352.1C247.9 352.1 255.2 355.9 259.7 362.3L286.1 400.1L347.5 299.6C351.9 292.5 359.6 288.1 368 288.1z"
-        />
-      </symbol>
-      <symbol id="icon_play" fill="currentColor" viewBox="0 0 640 640">
-        <path
-          d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
-        />
-      </symbol>
-      <symbol id="icon_download" fill="currentColor" viewBox="0 0 640 640">
-        <path
-          d="M352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 306.7L246.6 265.3C234.1 252.8 213.8 252.8 201.3 265.3C188.8 277.8 188.8 298.1 201.3 310.6L297.3 406.6C309.8 419.1 330.1 419.1 342.6 406.6L438.6 310.6C451.1 298.1 451.1 277.8 438.6 265.3C426.1 252.8 405.8 252.8 393.3 265.3L352 306.7L352 96zM160 384C124.7 384 96 412.7 96 448L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 448C544 412.7 515.3 384 480 384L433.1 384L376.5 440.6C345.3 471.8 294.6 471.8 263.4 440.6L206.9 384L160 384zM464 440C477.3 440 488 450.7 488 464C488 477.3 477.3 488 464 488C450.7 488 440 477.3 440 464C440 450.7 450.7 440 464 440z"
-        />
-      </symbol>
-      <symbol id="icon_seta" fill="currentColor" viewBox="0 0 640 640">
-        <path
-          d="M41.4 297.4C28.9 309.9 28.9 330.2 41.4 342.7L169.4 470.7C181.9 483.2 202.2 483.2 214.7 470.7C227.2 458.2 227.2 437.9 214.7 425.4L141.3 352L576 352C593.7 352 608 337.7 608 320C608 302.3 593.7 288 576 288L141.3 288L214.7 214.6C227.2 202.1 227.2 181.8 214.7 169.3C202.2 156.8 181.9 156.8 169.4 169.3L41.4 297.3z"
-        />
-      </symbol>
-    </svg>
-    <script src="js.js" defer></script>
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>

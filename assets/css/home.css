@@ -1,0 +1,232 @@
+#home {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  transition:
+    transform 1s,
+    left 1s;
+}
+
+#home.show {
+  left: 0;
+  transform: translateX(0);
+}
+
+#campo-arquivo {
+  position: relative;
+  border: 2px solid var(--cor-texto-2);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  align-content: center;
+  padding: 5%;
+  cursor: pointer;
+  width: clamp(300px, 600px, 100%);
+  aspect-ratio: 2/1;
+}
+
+#campo-arquivo svg {
+  height: 70px;
+  opacity: 0.5;
+}
+
+#preview-upload {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+  z-index: -1;
+  border-radius: 15px;
+  transition: opacity 0.35s;
+}
+
+#preview-upload.reset {
+  opacity: 0;
+}
+
+/* INPUTS -------------------------------- */
+/* INPUTS -------------------------------- */
+/* INPUTS -------------------------------- */
+
+#container {
+  display: flex;
+  flex-direction: column;
+  width: clamp(300px, 600px, 100%);
+  gap: 1dvh;
+}
+
+#container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4%;
+}
+
+#container span {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+#container input,
+#comparacao-input {
+  position: relative;
+  --porcentagem: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(
+    110deg,
+    var(--cor-tema),
+    var(--cor-tema-2) var(--porcentagem),
+    var(--cor-texto-2) 0
+  );
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Thumb para WebKit */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--cor-texto);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Thumb para Firefox */
+input[type="range"]::-moz-range-thumb {
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--cor-texto);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.porcentagem-texto {
+  width: 10%;
+}
+
+/* OPÇÔES DE SAIDA -------------------------------- */
+/* OPÇÔES DE SAIDA -------------------------------- */
+/* OPÇÔES DE SAIDA -------------------------------- */
+
+#saida-container {
+  text-align: center;
+  width: clamp(300px, 600px, 100%);
+}
+
+#btns-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: max(1vw, 10px);
+}
+
+#btns-container input {
+  display: none;
+}
+
+#btns-container label {
+  position: relative;
+  border: 2px solid var(--cor-texto-2);
+  border-radius: 10px;
+  padding: max(1vw, 20px) 0;
+  width: clamp(150px, 33%, 50%);
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+#btns-container label::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  background: var(--gradient);
+}
+
+#btns-container:has(#webp:checked) #webp-label::before,
+#btns-container:has(#jpeg:checked) #jpeg-label::before,
+#btns-container:has(#png:checked) #png-label::before,
+#btns-container:has(#avif:checked) #avif-label::before {
+  opacity: 1;
+}
+
+/* BTN CONVERTER -------------------------------- */
+/* BTN CONVERTER -------------------------------- */
+/* BTN CONVERTER -------------------------------- */
+
+#converter-btn {
+  display: flex;
+  align-items: center;
+  padding: 1% 2%;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  background: var(--gradient);
+  font-weight: bolder;
+  letter-spacing: 1px;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+#converter-btn.erro {
+  background: red;
+  animation: erro-animacao 0.2s linear 2 alternate;
+}
+
+@keyframes erro-animacao {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(+10px);
+  }
+
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+#btns-container label:hover,
+#converter-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------------------------------- */
+/* ------------------------------------------------- */
+/* ------------------------------------------------- */
+
+@media (prefers-color-scheme: light) {
+  #btns-container:has(#webp:checked) #webp-label,
+  #btns-container:has(#jpeg:checked) #jpeg-label,
+  #btns-container:has(#png:checked) #png-label,
+  #btns-container:has(#avif:checked) #avif-label,
+  #converter-btn,
+  #preview a {
+    color: var(--background) !important;
+  }
+
+  /* Thumb para WebKit */
+  input[type="range"]::-webkit-slider-thumb {
+    background: var(--background);
+    box-shadow: var(--box-shadow);
+  }
+
+  /* Thumb para Firefox */
+  input[type="range"]::-moz-range-thumb {
+    background: var(--background);
+    box-shadow: var(--box-shadow);
+  }
+}
